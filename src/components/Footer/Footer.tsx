@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import Brand from '@/components/Brand'
 import { cards } from '@/data/cards'
+import { author } from '@/data/author'
 import { navigationLinks } from '@/data/navigation'
 import styles from './Footer.module.sass'
 
@@ -41,7 +42,13 @@ export default function Footer() {
         </div>
         <div className={styles.bottom}>
           <p>© {year} Cardinal. Todos os direitos reservados.</p>
-          <p>Não é recomendação financeira.</p>
+          <p>
+            Feito por{' '}
+            <Link to="/sobre-mim" className={styles.credit}>
+              {author.name}
+            </Link>{' '}
+            · Não é recomendação financeira.
+          </p>
         </div>
       </div>
     </footer>

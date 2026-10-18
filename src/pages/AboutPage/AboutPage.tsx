@@ -21,9 +21,9 @@ export default function AboutPage() {
 
         <PageSection title="De onde vem">
           <p>
-            Nasceu do Radar de Cartões, uma página única em HTML que já fazia essa conta. Aqui ela
-            foi reescrita em React e TypeScript, com a mesma base de dados ampliada e as regras
-            testadas contra a versão original. Para entender as regras, veja{' '}
+            Nasceu de uma dificuldade real: escolher o melhor cartão para um perfil específico, com
+            regras de anuidade, retorno, salas VIP e câmbio espalhadas por vários lugares. O Cardinal
+            reúne tudo numa conta só. Para entender as regras, veja{' '}
             <Link to="/como-funciona">como funciona</Link>.
           </p>
         </PageSection>
@@ -59,8 +59,7 @@ export default function AboutPage() {
 
         <PageSection title="Um aviso importante">
           <p>
-            Isto é um projeto de estudo. As regras dos cartões mudam e parte dos dados tem
-            confiança média ou baixa. Confirme sempre no app do emissor. Não é recomendação
+            As regras dos cartões mudam e parte dos dados tem confiança média ou baixa. Confirme sempre no app do emissor. Não é recomendação
             financeira.
           </p>
         </PageSection>

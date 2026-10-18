@@ -1,0 +1,84 @@
+@use '../../styles/mixins'
+
+.page
+  padding-bottom: var(--space-7)
+
+.content
+  @include mixins.container
+
+.bio
+  display: grid
+  gap: var(--space-4)
+  max-width: 44rem
+  padding-bottom: var(--space-6)
+  color: var(--text)
+  font-size: var(--text-lg)
+  line-height: 1.6
+
+.links
+  display: grid
+  gap: var(--space-3)
+  margin: 0
+  padding: 0
+  list-style: none
+
+  @include mixins.from(mixins.$breakpoint-md)
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+
+.links .link
+  display: grid
+  gap: 2px
+  padding: var(--space-4)
+  border: 1px solid var(--border)
+  border-radius: var(--radius-md)
+  background: var(--surface)
+  text-decoration: none
+  transition: background var(--transition)
+
+  &:hover
+    background: var(--surface-muted)
+
+.links .label
+  color: var(--text)
+  font-size: var(--text-md)
+
+.links .description
+  color: var(--text-muted)
+  font-size: var(--text-sm)
+
+.location
+  color: var(--text-muted)
+  font-size: var(--text-sm)
+
+.tiles
+  display: grid
+  gap: var(--space-3)
+  margin: 0
+
+  @include mixins.from(mixins.$breakpoint-md)
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+
+.certifications
+  display: grid
+  gap: var(--space-1)
+  margin: 0
+  padding: 0
+  list-style: none
+
+  @include mixins.from(mixins.$breakpoint-md)
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: var(--space-2) var(--space-5)
+
+.certification
+  display: grid
+  gap: 2px
+  padding: var(--space-2) 0
+  border-bottom: 1px solid var(--border)
+
+.certificationName
+  color: var(--text)
+  font-size: var(--text-sm)
+
+.certificationMeta
+  color: var(--text-muted)
+  font-size: var(--text-xs)
