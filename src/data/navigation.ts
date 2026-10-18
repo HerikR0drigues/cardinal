@@ -7,4 +7,5 @@ export const navigationLinks: NavigationLink[] = [
   { to: '/', label: 'Ranking' },
   { to: '/como-funciona', label: 'Como funciona' },
   { to: '/sobre', label: 'Sobre' },
+  { to: '/sobre-mim', label: 'Sobre mim' },
 ]
