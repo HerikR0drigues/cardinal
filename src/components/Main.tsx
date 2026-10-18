@@ -17,6 +17,7 @@ import styles from './Main.module.scss'
 import RulesPanel from './RulesPanel'
 import SortControl from './SortControl'
 import SpendPanel from './SpendPanel'
+import ThemeToggle from './ThemeToggle'
 import Toolbar from './Toolbar'
 import WeightsPanel from './WeightsPanel'
 
@@ -54,13 +55,16 @@ export default function Main() {
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
           <Brand />
-          {!isDesktop && (
-            <Pill
-              label="Ajustes do cálculo"
-              isActive={isAdjustmentsOpen}
-              onClick={() => setIsAdjustmentsOpen(!isAdjustmentsOpen)}
-            />
-          )}
+          <div className={styles.brandActions}>
+            {!isDesktop && (
+              <Pill
+                label="Ajustes do cálculo"
+                isActive={isAdjustmentsOpen}
+                onClick={() => setIsAdjustmentsOpen(!isAdjustmentsOpen)}
+              />
+            )}
+            <ThemeToggle />
+          </div>
         </div>
         {showControls && (
           <>

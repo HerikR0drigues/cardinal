@@ -123,3 +123,5 @@ export interface FeeStatusOption {
   value: 'all' | FeeStatus
   label: string
 }
+
+export type Theme = 'light' | 'dark'
