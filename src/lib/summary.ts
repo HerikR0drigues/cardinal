@@ -52,13 +52,21 @@ export function summarizeFee(card: Card): Fact {
   return { value, detail: feeDetail(card) }
 }
 
-export function summarizeRewards(card: Card): Fact {
-  if (card.rewardsRate === null) return { value: 'n/i', detail: 'Não informado' }
+export function summarizeRewards(
+  card: Card,
+  rewardsRate: number | null,
+  annualRewards: number | null,
+): Fact {
+  if (rewardsRate === null || annualRewards === null) {
+    return { value: 'n/i', detail: 'Não informado' }
+  }
   const programs = detectPrograms(card.rewardsText, REWARD_PROGRAMS)
-  const detail = card.rewardsRateTiers
-    ? joinOrUndefined([...programs, 'varia com a fatura'])
-    : joinOrUndefined(programs)
-  return { value: `~${formatPercent(card.rewardsRate)}`, detail }
+  const detail = joinOrUndefined([
+    `~${formatPercent(rewardsRate)} do gasto`,
+    ...programs,
+    ...(card.rewardsRateTiers ? ['varia com a fatura'] : []),
+  ])
+  return { value: `~${formatBrl(annualRewards)}/ano`, detail }
 }
 
 export function summarizeLounge(card: Card): Fact {
