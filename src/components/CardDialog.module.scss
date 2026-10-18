@@ -3,7 +3,7 @@
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateY(1rem) scale(0.97);
+    transform: translateY(1rem) scale(0.98);
   }
 }
 
@@ -20,7 +20,7 @@
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  background: var(--surface);
+  background: var(--content);
   color: var(--text);
   box-shadow: var(--shadow-lg);
   animation: appear 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -38,8 +38,8 @@
   }
 
   &::backdrop {
-    background: rgb(6 8 18 / 0.65);
-    backdrop-filter: blur(6px);
+    background: rgb(8 8 8 / 0.6);
+    backdrop-filter: blur(4px);
   }
 }
 
@@ -49,8 +49,8 @@
   gap: var(--space-5);
   padding: var(--space-6) var(--space-5);
   background:
-    radial-gradient(100% 70% at 20% 0%, color-mix(in srgb, var(--aside-color) 40%, transparent), transparent 70%),
-    var(--surface-muted);
+    radial-gradient(100% 60% at 20% 0%, color-mix(in srgb, var(--aside-color) 16%, transparent), transparent 70%),
+    var(--bg);
   border-right: 1px solid var(--border);
   overflow: auto;
   @include thin-scrollbar;
@@ -62,7 +62,9 @@
 }
 
 .name {
+  font-family: var(--font-display);
   font-size: var(--text-xl);
+  font-weight: 400;
 }
 
 .issuer {
@@ -93,8 +95,8 @@
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
 }
 
@@ -120,8 +122,9 @@
 
 .bodyTitle {
   padding-right: var(--space-7);
-  font-size: var(--text-md);
-  font-weight: 600;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 .details {
@@ -139,18 +142,17 @@
   top: var(--space-3);
   right: var(--space-3);
   z-index: 1;
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 1px solid var(--border);
+  width: 2rem;
+  height: 2rem;
+  border: 0;
   border-radius: 50%;
-  background: var(--surface);
-  color: var(--text);
+  background: var(--surface-muted);
+  color: var(--text-muted);
   font: inherit;
   cursor: pointer;
-  transition: border-color var(--transition), color var(--transition);
+  transition: color var(--transition);
 
   &:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    color: var(--text);
   }
 }

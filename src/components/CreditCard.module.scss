@@ -7,7 +7,7 @@
 }
 
 .card {
-  --card-glow: color-mix(in srgb, var(--card-from) 60%, transparent);
+  --card-glow: color-mix(in srgb, var(--card-from) 45%, transparent);
   position: absolute;
   inset: 0;
   overflow: hidden;
@@ -18,7 +18,7 @@
   color: var(--card-ink);
   box-shadow:
     0 1px 0 rgb(255 255 255 / 0.25) inset,
-    0 3cqw 6cqw -2cqw var(--card-glow),
+    0 3cqw 6cqw -3cqw var(--card-glow),
     0 1cqw 2cqw -1cqw rgb(0 0 0 / 0.4);
   transform-style: preserve-3d;
   transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));

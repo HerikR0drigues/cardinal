@@ -19,12 +19,13 @@
 .track {
   fill: none;
   stroke: var(--border);
-  stroke-width: 8;
+  stroke-width: 4;
 }
 
 .value {
   fill: none;
-  stroke-width: 8;
+  stroke: var(--text);
+  stroke-width: 4;
   stroke-linecap: round;
   animation: fill 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -39,9 +40,10 @@
 }
 
 .number {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .max {

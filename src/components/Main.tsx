@@ -1,13 +1,18 @@
 import { useMemo, useState } from 'react'
 import { weightPresets } from '../data/constants'
 import { useLocalStorage } from '../hooks/useLocalStorage'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import { useRanking } from '../hooks/useRanking'
 import { DEFAULT_FILTERS } from '../lib/filter'
 import { DEFAULT_SORTING } from '../lib/sort'
 import { isFiniteNumber, isWeights } from '../lib/validators'
 import type { Filters, Scenario, Sorting, Weights } from '../types'
+import Brand from './Brand'
 import CardList from './CardList'
+import Footer from './Footer'
+import Header from './Header'
 import InvestmentPanel from './InvestmentPanel'
+import Pill from './Pill'
 import styles from './Main.module.scss'
 import RulesPanel from './RulesPanel'
 import SortControl from './SortControl'
@@ -25,6 +30,9 @@ export default function Main() {
   )
   const [hasSalaryPortability, setHasSalaryPortability] = useState(true)
   const [ignoreEntryRequirement, setIgnoreEntryRequirement] = useState(true)
+  const isDesktop = useMediaQuery('(min-width: 64rem)')
+  const [isAdjustmentsOpen, setIsAdjustmentsOpen] = useState(false)
+  const showControls = isDesktop || isAdjustmentsOpen
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS)
   const [sorting, setSorting] = useState<Sorting>(DEFAULT_SORTING)
 
@@ -42,23 +50,44 @@ export default function Main() {
   const rankedCards = useRanking(scenario, filters, sorting)
 
   return (
-    <main className={styles.main}>
-      <div className={styles.controls}>
-        <InvestmentPanel investment={investment} onInvestmentChange={setInvestment} />
-        <SpendPanel monthlySpend={monthlySpend} onMonthlySpendChange={setMonthlySpend} />
-        <WeightsPanel weights={weights} onWeightsChange={setWeights} />
+    <div className={styles.shell}>
+      <aside className={styles.sidebar}>
+        <div className={styles.brand}>
+          <Brand />
+          {!isDesktop && (
+            <Pill
+              label="Ajustes do cálculo"
+              isActive={isAdjustmentsOpen}
+              onClick={() => setIsAdjustmentsOpen(!isAdjustmentsOpen)}
+            />
+          )}
+        </div>
+        {showControls && (
+          <>
+            <InvestmentPanel investment={investment} onInvestmentChange={setInvestment} />
+            <SpendPanel monthlySpend={monthlySpend} onMonthlySpendChange={setMonthlySpend} />
+            <WeightsPanel weights={weights} onWeightsChange={setWeights} />
+            <RulesPanel
+              ignoreEntryRequirement={ignoreEntryRequirement}
+              hasSalaryPortability={hasSalaryPortability}
+              onIgnoreEntryRequirementChange={setIgnoreEntryRequirement}
+              onHasSalaryPortabilityChange={setHasSalaryPortability}
+            />
+          </>
+        )}
+      </aside>
+      <div className={styles.content}>
+        <Header />
+        <main className={styles.main}>
+          <Toolbar filters={filters} onFiltersChange={setFilters} />
+          <div className={styles.resultsBar}>
+            <p className={styles.count}>{rankedCards.length} cartões</p>
+            <SortControl sorting={sorting} onSortingChange={setSorting} />
+          </div>
+          <CardList cards={rankedCards} scenario={scenario} />
+        </main>
+        <Footer />
       </div>
-      <section className={styles.filters}>
-        <RulesPanel
-          ignoreEntryRequirement={ignoreEntryRequirement}
-          hasSalaryPortability={hasSalaryPortability}
-          onIgnoreEntryRequirementChange={setIgnoreEntryRequirement}
-          onHasSalaryPortabilityChange={setHasSalaryPortability}
-        />
-        <Toolbar filters={filters} onFiltersChange={setFilters} />
-        <SortControl sorting={sorting} onSortingChange={setSorting} />
-      </section>
-      <CardList cards={rankedCards} scenario={scenario} />
-    </main>
+    </div>
   )
 }

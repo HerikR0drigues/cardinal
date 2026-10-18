@@ -17,6 +17,7 @@ export default function ScoreBar({ contributions }: Readonly<ScoreBarProps>) {
           title={`${criterion.label}: ${contributions[criterion.key].toFixed(1)}`}
         />
       ))}
+      <span className={styles.rest} />
     </div>
   )
 }

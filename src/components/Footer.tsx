@@ -3,7 +3,7 @@ import styles from './Footer.module.scss'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <p className={styles.inner}>
+      <p>
         Dados de blogs especializados. Confirme no app do emissor. Não é recomendação
         financeira.
       </p>

@@ -1,3 +1,4 @@
+import Panel from './Panel'
 import Pill from './Pill'
 import PillRow from './PillRow'
 
@@ -15,19 +16,21 @@ export default function RulesPanel({
   onHasSalaryPortabilityChange,
 }: Readonly<RulesPanelProps>) {
   return (
-    <PillRow label="Regras">
-      <Pill
-        label="Ignorar exigência de renda"
-        title="Ignora exigências de renda ou de segmento para pedir o cartão; vale só a regra de isenção por investimento"
-        isActive={ignoreEntryRequirement}
-        onClick={() => onIgnoreEntryRequirementChange(!ignoreEntryRequirement)}
-      />
-      <Pill
-        label="Com portabilidade de salário"
-        title="O salário só pode ir para um banco; vale para comparar onde ele rende mais"
-        isActive={hasSalaryPortability}
-        onClick={() => onHasSalaryPortabilityChange(!hasSalaryPortability)}
-      />
-    </PillRow>
+    <Panel title="Regras do cálculo">
+      <PillRow>
+        <Pill
+          label="Ignorar exigência de renda"
+          title="Ignora exigências de renda ou de segmento para pedir o cartão; vale só a regra de isenção por investimento"
+          isActive={ignoreEntryRequirement}
+          onClick={() => onIgnoreEntryRequirementChange(!ignoreEntryRequirement)}
+        />
+        <Pill
+          label="Com portabilidade de salário"
+          title="O salário só pode ir para um banco; vale para comparar onde ele rende mais"
+          isActive={hasSalaryPortability}
+          onClick={() => onHasSalaryPortabilityChange(!hasSalaryPortability)}
+        />
+      </PillRow>
+    </Panel>
   )
 }

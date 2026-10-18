@@ -1,12 +1,9 @@
 @use '../styles/mixins';
 
 .footer {
-  border-top: 1px solid var(--border);
-  padding: var(--space-5) 0 var(--space-7);
-}
-
-.inner {
   @include mixins.container;
-  font-size: var(--text-sm);
+  padding: var(--space-6) 0 var(--space-7);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-xs);
   color: var(--text-muted);
 }

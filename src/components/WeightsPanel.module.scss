@@ -1,6 +1,6 @@
 .row {
   display: grid;
-  grid-template-columns: 6.5rem minmax(0, 1fr) 2.5rem;
+  grid-template-columns: 5.5rem minmax(0, 1fr) 2.25rem;
   align-items: center;
   gap: var(--space-3);
 }
@@ -13,13 +13,13 @@
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
 }
 
 .share {
   text-align: right;
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   color: var(--text-muted);
 }
