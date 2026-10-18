@@ -41,6 +41,19 @@
   gap: var(--space-4);
 }
 
+.position {
+  min-width: 2ch;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.heading {
+  flex: 1;
+  min-width: 0;
+}
+
 .name {
   font-size: var(--text-lg);
   font-weight: 500;

@@ -19,8 +19,8 @@ export default function CardList({ cards, scenario }: Readonly<CardListProps>) {
 
   return (
     <section className={styles.list}>
-      {cards.map((card) => (
-        <CardRow key={card.id} card={card} scenario={scenario} />
+      {cards.map((card, index) => (
+        <CardRow key={card.id} card={card} scenario={scenario} position={index + 1} />
       ))}
     </section>
   )
