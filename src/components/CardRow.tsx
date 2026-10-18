@@ -57,7 +57,7 @@ export default function CardRow({ card, scenario, position }: Readonly<CardRowPr
           </p>
         </div>
         <ScoreBar contributions={result.contributions} />
-        <QuickFacts card={card} />
+        <QuickFacts card={card} result={result} />
         <div className={styles.tags}>
           <Badge tone={FEE_TONE[result.fee.status]}>Anuidade: {result.fee.label}</Badge>
           <Badge>{groupNames[card.group]}</Badge>

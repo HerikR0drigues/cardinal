@@ -3,6 +3,7 @@ import type { Card, Confidence, CriterionScores, Scenario, ScoreResult } from '.
 import { calculateFee, pickTierValue } from './fee'
 
 const MAX_SCORE = 100
+const MONTHS_PER_YEAR = 12
 const FEE_AT_ZERO_SCORE = 1500
 const REWARDS_RATE_FOR_FULL_SCORE = 2
 const UNKNOWN_REWARDS_SCORE = 30
@@ -17,6 +18,9 @@ export function calculateScore(card: Card, scenario: Scenario): ScoreResult {
 
   const rewardsRate = pickTierValue(card.rewardsRateTiers, scenario.monthlySpend, card.rewardsRate)
   const loungeScore = pickTierValue(card.loungeScoreTiers, scenario.monthlySpend, card.loungeScore)
+
+  const annualRewards =
+    rewardsRate === null ? null : (scenario.monthlySpend * MONTHS_PER_YEAR * rewardsRate) / 100
 
   const feeScore =
     fee.status === 'exempt'
@@ -51,5 +55,5 @@ export function calculateScore(card: Card, scenario: Scenario): ScoreResult {
     total += contribution
   }
 
-  return { fee, scores, confidenceScore, total, contributions, totalWeight, rewardsRate, loungeScore }
+  return { fee, scores, confidenceScore, total, contributions, totalWeight, rewardsRate, annualRewards, loungeScore }
 }

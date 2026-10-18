@@ -100,6 +100,7 @@ export interface ScoreResult {
   contributions: CriterionScores
   totalWeight: number
   rewardsRate: number | null
+  annualRewards: number | null
   loungeScore: number | null
 }
 

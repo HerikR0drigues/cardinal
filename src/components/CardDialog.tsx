@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react'
 import { useEffect, useRef } from 'react'
 import { confidenceLabels, criteria, groupNames } from '../data/constants'
 import { getCardTheme } from '../data/cardThemes'
-import { formatOneDecimal } from '../lib/format'
+import { formatBrl, formatOneDecimal, formatPercent } from '../lib/format'
 import { calculateScore } from '../lib/score'
 import type { Card, Confidence, FeeStatus, Scenario } from '../types'
 import Badge from './Badge'
@@ -92,7 +92,21 @@ export default function CardDialog({ card, scenario, onClose }: Readonly<CardDia
         <h3 className={styles.bodyTitle}>Detalhes do cartão</h3>
         <dl className={styles.details}>
           <DetailTile isWide term="Como zerar a anuidade" description={card.feeRule} />
-          <DetailTile term="Retorno" description={card.rewardsText} />
+          <DetailTile
+            term="Retorno"
+            description={
+              <>
+                {result.annualRewards !== null && result.rewardsRate !== null && (
+                  <strong>
+                    Estimativa: ~{formatBrl(result.annualRewards)}/ano (
+                    {formatBrl(scenario.monthlySpend)}/mês × 12 × {formatPercent(result.rewardsRate)}
+                    ).{' '}
+                  </strong>
+                )}
+                {card.rewardsText}
+              </>
+            }
+          />
           <DetailTile term="Salas VIP" description={card.loungeText} />
           <DetailTile isWide term="Câmbio" description={card.exchangeText} />
           {card.caveat && <DetailTile isWide isWarning term="Atenção" description={card.caveat} />}

@@ -4,17 +4,18 @@ import {
   summarizeLounge,
   summarizeRewards,
 } from '../lib/summary'
-import type { Card } from '../types'
+import type { Card, ScoreResult } from '../types'
 import styles from './QuickFacts.module.scss'
 
 interface QuickFactsProps {
   card: Card
+  result: ScoreResult
 }
 
-export default function QuickFacts({ card }: Readonly<QuickFactsProps>) {
+export default function QuickFacts({ card, result }: Readonly<QuickFactsProps>) {
   const facts = [
     { label: 'Anuidade cheia', fact: summarizeFee(card) },
-    { label: 'Retorno', fact: summarizeRewards(card) },
+    { label: 'Retorno', fact: summarizeRewards(card, result.rewardsRate, result.annualRewards) },
     { label: 'Salas VIP', fact: summarizeLounge(card) },
     { label: 'Câmbio', fact: summarizeExchange(card) },
   ]
