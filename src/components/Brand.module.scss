@@ -1,14 +1,14 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 
 .glyph {
-  width: 20px;
-  height: 20px;
+  height: 1.6em;
+  width: auto;
 }
