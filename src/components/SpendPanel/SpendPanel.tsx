@@ -1,7 +1,7 @@
-import { formatBrl } from '../../lib/format'
-import Panel from '../Panel'
-import RangeSlider from '../RangeSlider'
-import ValueDisplay from '../ValueDisplay'
+import { formatBrl } from '@/lib/format'
+import Panel from '@/components/Panel'
+import RangeSlider from '@/components/RangeSlider'
+import ValueDisplay from '@/components/ValueDisplay'
 
 interface SpendPanelProps {
   monthlySpend: number

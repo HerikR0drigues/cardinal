@@ -6,7 +6,7 @@ import type {
   GroupOption,
   SortOption,
   WeightPreset,
-} from '../types'
+} from '@/types'
 
 export const criteria: Criterion[] = [
   { key: 'annualFee', label: 'Anuidade', color: 'var(--criterion-fee)' },

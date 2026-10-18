@@ -3,8 +3,8 @@ import {
   summarizeFee,
   summarizeLounge,
   summarizeRewards,
-} from '../../lib/summary'
-import type { Card, ScoreResult } from '../../types'
+} from '@/lib/summary'
+import type { Card, ScoreResult } from '@/types'
 import styles from './QuickFacts.module.sass'
 
 interface QuickFactsProps {

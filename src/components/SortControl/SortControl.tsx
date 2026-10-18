@@ -1,6 +1,6 @@
-import { sortOptions } from '../../data/constants'
-import type { Sorting } from '../../types'
-import SelectField from '../SelectField'
+import { sortOptions } from '@/data/constants'
+import type { Sorting } from '@/types'
+import SelectField from '@/components/SelectField'
 import styles from './SortControl.module.sass'
 
 interface SortControlProps {

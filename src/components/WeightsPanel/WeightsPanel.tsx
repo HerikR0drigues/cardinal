@@ -1,9 +1,9 @@
-import { criteria, weightPresets } from '../../data/constants'
-import type { Weights } from '../../types'
-import Panel from '../Panel'
-import Pill from '../Pill'
-import PillRow from '../PillRow'
-import RangeSlider from '../RangeSlider'
+import { criteria, weightPresets } from '@/data/constants'
+import type { Weights } from '@/types'
+import Panel from '@/components/Panel'
+import Pill from '@/components/Pill'
+import PillRow from '@/components/PillRow'
+import RangeSlider from '@/components/RangeSlider'
 import styles from './WeightsPanel.module.sass'
 
 interface WeightsPanelProps {

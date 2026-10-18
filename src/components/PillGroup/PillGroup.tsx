@@ -1,5 +1,5 @@
-import Pill from '../Pill'
-import PillRow from '../PillRow'
+import Pill from '@/components/Pill'
+import PillRow from '@/components/PillRow'
 
 interface PillGroupOption<Value extends string> {
   value: Value

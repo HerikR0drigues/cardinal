@@ -1,9 +1,9 @@
-import { feeStatusOptions, groupOptions } from '../../data/constants'
-import type { Filters } from '../../types'
-import Pill from '../Pill'
-import PillGroup from '../PillGroup'
-import PillRow from '../PillRow'
-import SearchInput from '../SearchInput'
+import { feeStatusOptions, groupOptions } from '@/data/constants'
+import type { Filters } from '@/types'
+import Pill from '@/components/Pill'
+import PillGroup from '@/components/PillGroup'
+import PillRow from '@/components/PillRow'
+import SearchInput from '@/components/SearchInput'
 import styles from './Toolbar.module.sass'
 
 interface ToolbarProps {

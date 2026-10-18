@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { isThemePreference } from '../lib/validators'
-import type { Theme } from '../types'
+import { isThemePreference } from '@/lib/validators'
+import type { Theme } from '@/types'
 import { useLocalStorage } from './useLocalStorage'
 import { useMediaQuery } from './useMediaQuery'
 

@@ -1,5 +1,5 @@
-import type { Card, Scenario } from '../../types'
-import CardRow from '../CardRow'
+import type { Card, Scenario } from '@/types'
+import CardRow from '@/components/CardRow'
 import styles from './CardList.module.sass'
 
 interface CardListProps {

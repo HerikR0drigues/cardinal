@@ -1,10 +1,10 @@
-import { investmentPresets } from '../../data/constants'
-import { formatBrl, formatCompactBrl } from '../../lib/format'
-import Panel from '../Panel'
-import Pill from '../Pill'
-import PillRow from '../PillRow'
-import RangeSlider from '../RangeSlider'
-import ValueDisplay from '../ValueDisplay'
+import { investmentPresets } from '@/data/constants'
+import { formatBrl, formatCompactBrl } from '@/lib/format'
+import Panel from '@/components/Panel'
+import Pill from '@/components/Pill'
+import PillRow from '@/components/PillRow'
+import RangeSlider from '@/components/RangeSlider'
+import ValueDisplay from '@/components/ValueDisplay'
 
 interface InvestmentPanelProps {
   investment: number

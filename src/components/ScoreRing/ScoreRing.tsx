@@ -1,4 +1,4 @@
-import { formatOneDecimal } from '../../lib/format'
+import { formatOneDecimal } from '@/lib/format'
 import styles from './ScoreRing.module.sass'
 
 const RADIUS = 56

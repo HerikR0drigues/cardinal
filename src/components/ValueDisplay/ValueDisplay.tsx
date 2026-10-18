@@ -1,4 +1,4 @@
-import { classNames } from '../../lib/classNames'
+import { classNames } from '@/lib/classNames'
 import styles from './ValueDisplay.module.sass'
 
 interface ValueDisplayProps {

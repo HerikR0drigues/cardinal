@@ -1,6 +1,6 @@
-import Panel from '../Panel'
-import Pill from '../Pill'
-import PillRow from '../PillRow'
+import Panel from '@/components/Panel'
+import Pill from '@/components/Pill'
+import PillRow from '@/components/PillRow'
 
 interface RulesPanelProps {
   ignoreEntryRequirement: boolean

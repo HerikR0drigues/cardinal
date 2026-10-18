@@ -1,5 +1,5 @@
-import { criteria } from '../data/constants'
-import type { Card, Confidence, CriterionScores, Scenario, ScoreResult } from '../types'
+import { criteria } from '@/data/constants'
+import type { Card, Confidence, CriterionScores, Scenario, ScoreResult } from '@/types'
 import { calculateFee, pickTierValue } from './fee'
 
 const MAX_SCORE = 100

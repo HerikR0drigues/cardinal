@@ -1,5 +1,5 @@
-import { criteria } from '../../data/constants'
-import type { CriterionScores } from '../../types'
+import { criteria } from '@/data/constants'
+import type { CriterionScores } from '@/types'
 import styles from './ScoreBar.module.sass'
 
 interface ScoreBarProps {

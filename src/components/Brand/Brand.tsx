@@ -1,4 +1,4 @@
-import BirdMark from '../BirdMark'
+import BirdMark from '@/components/BirdMark'
 import styles from './Brand.module.sass'
 
 export default function Brand() {
