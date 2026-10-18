@@ -3,11 +3,9 @@
 .shell
   display: grid
   grid-template-columns: minmax(0, 1fr)
-  min-height: 100dvh
 
   @include mixins.from(mixins.$breakpoint-lg)
     grid-template-columns: 21rem minmax(0, 1fr)
 
 .content
   min-width: 0
-  background: var(--content)

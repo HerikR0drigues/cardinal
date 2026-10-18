@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import Brand from '@/components/Brand'
 import InvestmentPanel from '@/components/InvestmentPanel'
 import Pill from '@/components/Pill'
 import RulesPanel from '@/components/RulesPanel'
 import SpendPanel from '@/components/SpendPanel'
-import ThemeToggle from '@/components/ThemeToggle'
 import WeightsPanel from '@/components/WeightsPanel'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useScenario, useScenarioStore } from '@/store/scenarioStore'
@@ -21,19 +19,15 @@ export default function Sidebar() {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.brand}>
-        <Brand />
-        <div className={styles.brandActions}>
-          {!isDesktop && (
-            <Pill
-              label="Ajustes do cálculo"
-              isActive={isAdjustmentsOpen}
-              onClick={() => setIsAdjustmentsOpen(!isAdjustmentsOpen)}
-            />
-          )}
-          <ThemeToggle />
+      {!isDesktop && (
+        <div className={styles.mobileBar}>
+          <Pill
+            label="Ajustes do cálculo"
+            isActive={isAdjustmentsOpen}
+            onClick={() => setIsAdjustmentsOpen(!isAdjustmentsOpen)}
+          />
         </div>
-      </div>
+      )}
       {showControls && (
         <>
           <InvestmentPanel
