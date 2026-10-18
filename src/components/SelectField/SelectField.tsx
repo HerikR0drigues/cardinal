@@ -1,4 +1,4 @@
-import styles from './SelectField.module.scss'
+import styles from './SelectField.module.sass'
 
 interface SelectFieldOption<Value extends string> {
   value: Value

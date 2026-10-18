@@ -1,5 +1,5 @@
 import { classNames } from '../../lib/classNames'
-import styles from './Pill.module.scss'
+import styles from './Pill.module.sass'
 
 interface PillProps {
   label: string

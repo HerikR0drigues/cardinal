@@ -1,5 +1,5 @@
 import { classNames } from '../../lib/classNames'
-import styles from './ValueDisplay.module.scss'
+import styles from './ValueDisplay.module.sass'
 
 interface ValueDisplayProps {
   value: string

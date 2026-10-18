@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import styles from './RangeSlider.module.scss'
+import styles from './RangeSlider.module.sass'
 
 interface RangeSliderProps {
   label: string

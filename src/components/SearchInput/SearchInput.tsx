@@ -1,4 +1,4 @@
-import styles from './SearchInput.module.scss'
+import styles from './SearchInput.module.sass'
 
 interface SearchInputProps {
   value: string

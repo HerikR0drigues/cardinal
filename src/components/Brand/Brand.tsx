@@ -1,5 +1,5 @@
 import BirdMark from '../BirdMark'
-import styles from './Brand.module.scss'
+import styles from './Brand.module.sass'
 
 export default function Brand() {
   return (

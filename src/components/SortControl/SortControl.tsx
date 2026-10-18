@@ -1,7 +1,7 @@
 import { sortOptions } from '../../data/constants'
 import type { Sorting } from '../../types'
 import SelectField from '../SelectField'
-import styles from './SortControl.module.scss'
+import styles from './SortControl.module.sass'
 
 interface SortControlProps {
   sorting: Sorting

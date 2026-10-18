@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import styles from './PillRow.module.scss'
+import styles from './PillRow.module.sass'
 
 interface PillRowProps {
   label?: string

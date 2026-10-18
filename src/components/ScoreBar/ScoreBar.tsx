@@ -1,6 +1,6 @@
 import { criteria } from '../../data/constants'
 import type { CriterionScores } from '../../types'
-import styles from './ScoreBar.module.scss'
+import styles from './ScoreBar.module.sass'
 
 interface ScoreBarProps {
   contributions: CriterionScores

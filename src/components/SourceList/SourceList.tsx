@@ -1,4 +1,4 @@
-import styles from './SourceList.module.scss'
+import styles from './SourceList.module.sass'
 
 interface SourceListProps {
   sources: string[]

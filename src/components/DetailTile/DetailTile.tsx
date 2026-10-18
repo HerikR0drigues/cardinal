@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { classNames } from '../../lib/classNames'
-import styles from './DetailTile.module.scss'
+import styles from './DetailTile.module.sass'
 
 interface DetailTileProps {
   term: string

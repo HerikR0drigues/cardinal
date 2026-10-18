@@ -4,7 +4,7 @@ import Pill from '../Pill'
 import PillGroup from '../PillGroup'
 import PillRow from '../PillRow'
 import SearchInput from '../SearchInput'
-import styles from './Toolbar.module.scss'
+import styles from './Toolbar.module.sass'
 
 interface ToolbarProps {
   filters: Filters

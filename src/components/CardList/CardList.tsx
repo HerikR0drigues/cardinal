@@ -1,6 +1,6 @@
 import type { Card, Scenario } from '../../types'
 import CardRow from '../CardRow'
-import styles from './CardList.module.scss'
+import styles from './CardList.module.sass'
 
 interface CardListProps {
   cards: Card[]

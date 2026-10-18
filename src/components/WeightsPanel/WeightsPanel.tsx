@@ -4,7 +4,7 @@ import Panel from '../Panel'
 import Pill from '../Pill'
 import PillRow from '../PillRow'
 import RangeSlider from '../RangeSlider'
-import styles from './WeightsPanel.module.scss'
+import styles from './WeightsPanel.module.sass'
 
 interface WeightsPanelProps {
   weights: Weights

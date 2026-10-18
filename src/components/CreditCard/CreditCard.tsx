@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react'
 import { getCardTheme } from '../../data/cardThemes'
 import { useTilt } from '../../hooks/useTilt'
 import type { Card } from '../../types'
-import styles from './CreditCard.module.scss'
+import styles from './CreditCard.module.sass'
 
 interface CreditCardProps {
   card: Card

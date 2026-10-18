@@ -1,5 +1,5 @@
 import { formatOneDecimal } from '../../lib/format'
-import styles from './ScoreRing.module.scss'
+import styles from './ScoreRing.module.sass'
 
 const RADIUS = 56
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS

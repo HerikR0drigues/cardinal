@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import styles from './Panel.module.scss'
+import styles from './Panel.module.sass'
 
 interface PanelProps {
   title: string
