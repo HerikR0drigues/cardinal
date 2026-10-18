@@ -26,9 +26,10 @@ const CONFIDENCE_TONE: Record<Confidence, BadgeTone> = {
 interface CardRowProps {
   card: Card
   scenario: Scenario
+  position: number
 }
 
-export default function CardRow({ card, scenario }: Readonly<CardRowProps>) {
+export default function CardRow({ card, scenario, position }: Readonly<CardRowProps>) {
   const [isOpen, setIsOpen] = useState(false)
   const result = calculateScore(card, scenario)
 
@@ -39,7 +40,10 @@ export default function CardRow({ card, scenario }: Readonly<CardRowProps>) {
       </div>
       <div className={styles.info}>
         <div className={styles.top}>
-          <div>
+          <span className={`${styles.position} num`} aria-label={`Posição ${position}`}>
+            {position}
+          </span>
+          <div className={styles.heading}>
             <h2 className={styles.name}>
               <button type="button" className={styles.open} onClick={() => setIsOpen(true)}>
                 {card.name}
