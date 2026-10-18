@@ -1,8 +1,8 @@
-import type { Card, FeeResult, Scenario, Tier } from '../types'
+import type { Card, FeeResult, Scenario, Tier } from '@/types'
 import { formatCompactBrl } from './format'
 
-const MODULE_DISCOUNT_PER_STEP = 10
-const MODULE_DISCOUNT_STEP_INVESTMENT = 10_000
+export const MODULE_DISCOUNT_PER_STEP = 10
+export const MODULE_DISCOUNT_STEP_INVESTMENT = 10_000
 const MONTHS_PER_YEAR = 12
 
 function requiresLabel(amount: number): string {

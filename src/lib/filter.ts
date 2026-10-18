@@ -1,4 +1,4 @@
-import type { Card, Filters, Scenario } from '../types'
+import type { Card, Filters, Scenario } from '@/types'
 import { isSpendOnly } from './fee'
 import { calculateScore } from './score'
 

@@ -1,0 +1,21 @@
+@use '../../styles/mixins'
+
+.sidebar
+  display: grid
+  align-content: start
+  padding: var(--space-5)
+  background: var(--bg)
+
+  @include mixins.from(mixins.$breakpoint-lg)
+    position: sticky
+    top: var(--navbar-height)
+    height: calc(100dvh - var(--navbar-height))
+    overflow: auto
+    border-right: 1px solid var(--border)
+    scrollbar-width: thin
+    scrollbar-color: var(--border) transparent
+
+.mobileBar
+  display: flex
+  padding-bottom: var(--space-4)
+  border-bottom: 1px solid var(--border)

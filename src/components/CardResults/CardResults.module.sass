@@ -1,0 +1,19 @@
+@use '../../styles/mixins'
+
+.main
+  @include mixins.container
+  display: grid
+  grid-template-columns: minmax(0, 1fr)
+  gap: var(--space-5)
+  padding-bottom: var(--space-6)
+
+.resultsBar
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: space-between
+  gap: var(--space-3) var(--space-4)
+
+.count
+  font-size: var(--text-sm)
+  color: var(--text-muted)

@@ -1,0 +1,22 @@
+@use '../../styles/mixins'
+
+.page
+  padding-bottom: var(--space-7)
+
+.content
+  @include mixins.container
+
+.lede
+  max-width: 44rem
+  padding-bottom: var(--space-6)
+  color: var(--text)
+  font-size: var(--text-lg)
+  line-height: 1.6
+
+.tiles
+  display: grid
+  gap: var(--space-3)
+  margin: 0
+
+  @include mixins.from(mixins.$breakpoint-md)
+    grid-template-columns: repeat(2, minmax(0, 1fr))

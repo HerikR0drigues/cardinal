@@ -1,4 +1,4 @@
-import type { Card, Group } from '../types'
+import type { Card, Group } from '@/types'
 
 export interface CardTheme {
   from: string

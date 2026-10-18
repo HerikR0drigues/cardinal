@@ -1,4 +1,4 @@
-import type { Card, ScoreResult, Scenario, SortKey, Sorting } from '../types'
+import type { Card, ScoreResult, Scenario, SortKey, Sorting } from '@/types'
 import { calculateScore } from './score'
 
 export const DEFAULT_SORTING: Sorting = { key: 'score', direction: 'desc' }

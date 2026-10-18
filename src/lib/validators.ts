@@ -1,5 +1,5 @@
-import { criteria } from '../data/constants'
-import type { Theme, Weights } from '../types'
+import { criteria } from '@/data/constants'
+import type { Theme, Weights } from '@/types'
 
 export function isFiniteNumber(value: unknown): value is number {
   return typeof value === 'number' && Number.isFinite(value)

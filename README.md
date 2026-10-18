@@ -22,7 +22,7 @@ Cada cartão recebe de 0 a 100 em quatro critérios (anuidade, retorno, salas VI
 - `src/data/`: cartões (`cards.ts`), constantes e cores de cada banco (`cardThemes.ts`)
 - `src/lib/`: anuidade, nota, filtros, ordenação, resumos e formatação
 - `src/hooks/`: `useRanking`, `useLocalStorage`, `useTilt`
-- `src/components/`: um componente por arquivo, com seu `.module.scss`
+- `src/components/`: um componente por arquivo, com seu `.module.sass`
 - `src/styles/`: paleta, tokens e base do design system
 
 ## Sobre os dados

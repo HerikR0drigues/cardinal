@@ -1,0 +1,29 @@
+.badge
+  display: inline-flex
+  align-items: center
+  gap: 6px
+  padding: 2px var(--space-2)
+  border: 1px solid var(--border)
+  border-radius: var(--radius-pill)
+  color: var(--text-muted)
+  font-size: var(--text-xs)
+  white-space: nowrap
+
+.dot::before
+  content: ''
+  width: 6px
+  height: 6px
+  border-radius: 50%
+  background: currentColor
+
+.primary
+  color: var(--text)
+
+.success
+  color: var(--success)
+
+.warning
+  color: var(--warning)
+
+.danger
+  color: var(--danger)
