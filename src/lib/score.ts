@@ -2,13 +2,13 @@ import { criteria } from '@/data/constants'
 import type { Card, Confidence, CriterionScores, Scenario, ScoreResult } from '@/types'
 import { calculateFee, pickTierValue } from './fee'
 
-const MAX_SCORE = 100
+export const MAX_SCORE = 100
 const MONTHS_PER_YEAR = 12
-const FEE_AT_ZERO_SCORE = 1500
-const REWARDS_RATE_FOR_FULL_SCORE = 2
-const UNKNOWN_REWARDS_SCORE = 30
-const UNKNOWN_LOUNGE_SCORE = 30
-const UNKNOWN_EXCHANGE_SCORE = 35
+export const FEE_AT_ZERO_SCORE = 1500
+export const REWARDS_RATE_FOR_FULL_SCORE = 2
+export const UNKNOWN_REWARDS_SCORE = 30
+export const UNKNOWN_LOUNGE_SCORE = 30
+export const UNKNOWN_EXCHANGE_SCORE = 35
 const SOURCES_DISAGREE_PENALTY = 15
 
 const CONFIDENCE_SCORE: Record<Confidence, number> = { high: 100, medium: 65, low: 30 }

@@ -1,10 +1,15 @@
 import styles from './Header.module.sass'
 
-export default function Header() {
+interface HeaderProps {
+  eyebrow: string
+  title: string
+}
+
+export default function Header({ eyebrow, title }: Readonly<HeaderProps>) {
   return (
     <header className={styles.header}>
-      <p className={styles.eyebrow}>O cartão principal da sua carteira</p>
-      <h1 className={styles.title}>Quais cartões zeram a sua anuidade?</h1>
+      <p className={styles.eyebrow}>{eyebrow}</p>
+      <h1 className={styles.title}>{title}</h1>
     </header>
   )
 }

@@ -1,7 +1,10 @@
 import { Link } from 'react-router'
+import { useDocumentTitle } from '@/hooks/useDocumentTitle'
 import styles from './NotFoundPage.module.sass'
 
 export default function NotFoundPage() {
+  useDocumentTitle('Página não encontrada · Cardinal')
+
   return (
     <section className={styles.page}>
       <p className={`${styles.code} num`}>404</p>

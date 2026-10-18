@@ -1,0 +1,51 @@
+.example
+  display: grid
+  gap: var(--space-3)
+  padding: var(--space-4)
+  border: 1px solid var(--border)
+  border-radius: var(--radius-lg)
+  background: var(--surface)
+
+.intro
+  color: var(--text)
+  font-size: var(--text-sm)
+
+.table
+  width: 100%
+  border-collapse: collapse
+  font-size: var(--text-sm)
+
+  th,
+  td
+    padding: var(--space-2) var(--space-2)
+    border-bottom: 1px solid var(--border)
+    text-align: right
+
+  th:first-child
+    text-align: left
+
+  thead th
+    color: var(--text-muted)
+    font-size: var(--text-xs)
+    font-weight: 400
+
+  tbody th
+    color: var(--text)
+    font-weight: 400
+
+  tfoot th,
+  tfoot td
+    border-bottom: 0
+    color: var(--text)
+    font-weight: 500
+
+  tfoot td
+    font-family: var(--font-display)
+    font-size: var(--text-lg)
+
+.dot
+  display: inline-block
+  width: 8px
+  height: 8px
+  margin-right: var(--space-2)
+  border-radius: 50%
