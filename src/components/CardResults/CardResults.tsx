@@ -5,14 +5,12 @@ import Toolbar from '@/components/Toolbar'
 import { useRanking } from '@/hooks/useRanking'
 import { DEFAULT_FILTERS } from '@/lib/filter'
 import { DEFAULT_SORTING } from '@/lib/sort'
-import type { Filters, Scenario, Sorting } from '@/types'
+import { useScenario } from '@/store/scenarioStore'
+import type { Filters, Sorting } from '@/types'
 import styles from './CardResults.module.sass'
 
-interface CardResultsProps {
-  scenario: Scenario
-}
-
-export default function CardResults({ scenario }: Readonly<CardResultsProps>) {
+export default function CardResults() {
+  const scenario = useScenario()
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS)
   const [sorting, setSorting] = useState<Sorting>(DEFAULT_SORTING)
   const rankedCards = useRanking(scenario, filters, sorting)

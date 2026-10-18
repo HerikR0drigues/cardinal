@@ -7,17 +7,14 @@ import SpendPanel from '@/components/SpendPanel'
 import ThemeToggle from '@/components/ThemeToggle'
 import WeightsPanel from '@/components/WeightsPanel'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import type { Scenario } from '@/types'
+import { useScenario, useScenarioStore } from '@/store/scenarioStore'
 import styles from './Sidebar.module.sass'
 
 const DESKTOP_QUERY = '(min-width: 64rem)'
 
-interface SidebarProps {
-  scenario: Scenario
-  onScenarioChange: (changes: Partial<Scenario>) => void
-}
-
-export default function Sidebar({ scenario, onScenarioChange }: Readonly<SidebarProps>) {
+export default function Sidebar() {
+  const scenario = useScenario()
+  const updateScenario = useScenarioStore((state) => state.updateScenario)
   const isDesktop = useMediaQuery(DESKTOP_QUERY)
   const [isAdjustmentsOpen, setIsAdjustmentsOpen] = useState(false)
   const showControls = isDesktop || isAdjustmentsOpen
@@ -41,24 +38,24 @@ export default function Sidebar({ scenario, onScenarioChange }: Readonly<Sidebar
         <>
           <InvestmentPanel
             investment={scenario.investment}
-            onInvestmentChange={(investment) => onScenarioChange({ investment })}
+            onInvestmentChange={(investment) => updateScenario({ investment })}
           />
           <SpendPanel
             monthlySpend={scenario.monthlySpend}
-            onMonthlySpendChange={(monthlySpend) => onScenarioChange({ monthlySpend })}
+            onMonthlySpendChange={(monthlySpend) => updateScenario({ monthlySpend })}
           />
           <WeightsPanel
             weights={scenario.weights}
-            onWeightsChange={(weights) => onScenarioChange({ weights })}
+            onWeightsChange={(weights) => updateScenario({ weights })}
           />
           <RulesPanel
             ignoreEntryRequirement={scenario.ignoreEntryRequirement}
             hasSalaryPortability={scenario.hasSalaryPortability}
             onIgnoreEntryRequirementChange={(ignoreEntryRequirement) =>
-              onScenarioChange({ ignoreEntryRequirement })
+              updateScenario({ ignoreEntryRequirement })
             }
             onHasSalaryPortabilityChange={(hasSalaryPortability) =>
-              onScenarioChange({ hasSalaryPortability })
+              updateScenario({ hasSalaryPortability })
             }
           />
         </>
