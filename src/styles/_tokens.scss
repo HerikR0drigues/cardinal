@@ -1,0 +1,58 @@
+@use 'palette';
+
+@mixin emit-colors($theme) {
+  @each $name, $value in $theme {
+    --#{$name}: #{$value};
+  }
+}
+
+:root {
+  @include emit-colors(palette.$light);
+  color-scheme: light;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, Menlo, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  --shadow-sm: 0 1px 2px rgb(15 23 41 / 0.06);
+  --shadow-md: 0 1px 2px rgb(15 23 41 / 0.06), 0 10px 28px -14px rgb(15 23 41 / 0.22);
+  --shadow-lg: 0 20px 48px -20px rgb(15 23 41 / 0.35);
+
+  --transition: 150ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include emit-colors(palette.$dark);
+    color-scheme: dark;
+    --shadow-md: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 30px -14px rgb(0 0 0 / 0.6);
+    --shadow-lg: 0 20px 48px -20px rgb(0 0 0 / 0.7);
+  }
+}
+
+:root[data-theme='dark'] {
+  @include emit-colors(palette.$dark);
+  color-scheme: dark;
+  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 30px -14px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 20px 48px -20px rgb(0 0 0 / 0.7);
+}

@@ -1,0 +1,100 @@
+@use '../styles/mixins';
+
+.row {
+  @include mixins.surface;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: border-color var(--transition);
+
+  &:hover {
+    border-color: var(--primary);
+  }
+
+  @include mixins.from(mixins.$breakpoint-md) {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.preview {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 22rem);
+  cursor: zoom-in;
+}
+
+.info {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.name {
+  font-size: var(--text-lg);
+}
+
+.open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible::after {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+.issuer {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.score {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  white-space: nowrap;
+}
+
+.scoreValue {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.scoreMax {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}

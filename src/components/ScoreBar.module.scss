@@ -1,0 +1,12 @@
+.bar {
+  display: flex;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--surface-muted);
+}
+
+.segment {
+  height: 100%;
+  transition: width var(--transition);
+}

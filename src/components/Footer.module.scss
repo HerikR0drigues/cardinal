@@ -1,0 +1,12 @@
+@use '../styles/mixins';
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-5) 0 var(--space-7);
+}
+
+.inner {
+  @include mixins.container;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
