@@ -10,5 +10,11 @@ interface BadgeProps {
 }
 
 export default function Badge({ tone = 'neutral', children }: Readonly<BadgeProps>) {
-  return <span className={classNames(styles.badge, styles[tone])}>{children}</span>
+  return (
+    <span
+      className={classNames(styles.badge, styles[tone], tone !== 'neutral' && styles.dot)}
+    >
+      {children}
+    </span>
+  )
 }

@@ -1,12 +1,18 @@
 .bar {
   display: flex;
-  height: 8px;
-  overflow: hidden;
-  border-radius: var(--radius-pill);
-  background: var(--surface-muted);
+  gap: 2px;
+  height: 4px;
 }
 
 .segment {
   height: 100%;
+  border-radius: var(--radius-pill);
   transition: width var(--transition);
+}
+
+.rest {
+  flex: 1;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--surface-muted);
 }
