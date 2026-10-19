@@ -4,6 +4,16 @@ O cartão principal da sua carteira. Comparador de cartões de crédito premium 
 
 Monorepo em TypeScript: um front em React, uma API em Node com banco SQLite e um pacote com os contratos que os dois compartilham.
 
+![Demonstração: digitar o valor investido, trocar o tema, rolar o ranking e abrir o detalhe de um cartão](docs/img/demo.gif)
+
+| Tema claro | Tema escuro |
+|---|---|
+| ![Ranking no tema claro](docs/img/ranking-claro.png) | ![Ranking no tema escuro](docs/img/ranking-escuro.png) |
+
+| Detalhe do cartão | Celular |
+|---|---|
+| ![Modal com a nota, a anuidade e as fontes de um cartão](docs/img/cartao-detalhe.png) | <img src="docs/img/mobile.png" alt="Ranking no celular" width="260"> |
+
 ## Estrutura
 
 ```
