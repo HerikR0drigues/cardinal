@@ -16,4 +16,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
       - run: npm run build
+      - name: Smoke da API (build de produção, banco novo)
+        run: |
+          PORT=3199 DATABASE_PATH="$RUNNER_TEMP/smoke.sqlite" NODE_ENV=production node apps/api/dist/server.js &
+          for tentativa in 1 2 3 4 5 6 7 8 9 10; do
+            curl -sf http://localhost:3199/api/meta && break || sleep 1
+          done
+          curl -sf http://localhost:3199/api/meta | grep -q '"totalCards"'

@@ -1,0 +1,147 @@
+@use '../../styles/mixins'
+
+@keyframes appear
+  from
+    opacity: 0
+    transform: translateY(1rem) scale(0.98)
+
+@mixin thin-scrollbar
+  overscroll-behavior: contain
+  scrollbar-width: thin
+  scrollbar-color: var(--border) transparent
+
+.dialog
+  width: min(62rem, calc(100% - var(--space-5)))
+  max-height: min(44rem, calc(100dvh - var(--space-5)))
+  padding: 0
+  overflow: auto
+  border: 1px solid var(--border)
+  border-radius: var(--radius-xl)
+  background: var(--content)
+  color: var(--text)
+  box-shadow: var(--shadow-lg)
+  animation: appear 250ms cubic-bezier(0.2, 0.8, 0.2, 1)
+  @include thin-scrollbar
+
+  &[open]
+    display: grid
+    grid-template-columns: minmax(0, 1fr)
+
+    @include mixins.from(mixins.$breakpoint-md)
+      grid-template-columns: minmax(0, 22rem) minmax(0, 1fr)
+      grid-template-rows: minmax(0, 1fr)
+      overflow: hidden
+
+  &::backdrop
+    background: rgb(8 8 8 / 0.6)
+    backdrop-filter: blur(4px)
+
+.aside
+  display: grid
+  align-content: start
+  gap: var(--space-5)
+  padding: var(--space-6) var(--space-5)
+  background: radial-gradient(100% 60% at 20% 0%, color-mix(in srgb, var(--aside-color) 16%, transparent), transparent 70%), var(--bg)
+  border-right: 1px solid var(--border)
+  overflow: auto
+  @include thin-scrollbar
+
+.identity
+  display: grid
+  gap: var(--space-1)
+
+.name
+  font-family: var(--font-display)
+  font-size: var(--text-xl)
+  font-weight: 400
+
+.issuer
+  font-size: var(--text-sm)
+  color: var(--text-muted)
+
+.scoreBlock
+  display: flex
+  align-items: center
+  gap: var(--space-4)
+
+.breakdown
+  display: grid
+  flex: 1
+  gap: var(--space-2)
+  margin: 0
+  padding: 0
+  list-style: none
+
+.breakdownItem
+  display: flex
+  align-items: center
+  gap: var(--space-2)
+  font-size: var(--text-sm)
+
+.dot
+  width: 6px
+  height: 6px
+  border-radius: 50%
+
+.breakdownValue
+  margin-left: auto
+  color: var(--text-muted)
+
+.tags
+  display: flex
+  flex-wrap: wrap
+  gap: var(--space-2)
+
+.body
+  display: grid
+  align-content: start
+  gap: var(--space-4)
+  padding: var(--space-6) var(--space-5) var(--space-5)
+  overflow: auto
+  @include thin-scrollbar
+
+.bodyTitle
+  padding-right: var(--space-7)
+  font-size: var(--text-sm)
+  font-weight: 400
+  color: var(--text-muted)
+
+.details
+  display: grid
+  gap: var(--space-3)
+  margin: 0
+
+  @include mixins.from(mixins.$breakpoint-md)
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+
+.close
+  position: absolute
+  top: var(--space-3)
+  right: var(--space-3)
+  z-index: 1
+  width: 2rem
+  height: 2rem
+  border: 0
+  border-radius: 50%
+  background: var(--surface-muted)
+  color: var(--text-muted)
+  font: inherit
+  cursor: pointer
+  transition: color var(--transition)
+
+  &:hover
+    color: var(--text)
+
+.sourcesSkeleton
+  display: grid
+  gap: var(--space-2)
+
+.retry
+  padding: 0
+  border: 0
+  background: none
+  color: var(--text)
+  font: inherit
+  text-decoration: underline
+  text-underline-offset: 3px
+  cursor: pointer
