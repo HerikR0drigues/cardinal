@@ -3,6 +3,8 @@ import { matchesFilters } from './filter.ts'
 import { calculateScore } from './score.ts'
 import { compareScored, type ScoredCard } from './sort.ts'
 
+// Domain = regras de negócio como funções puras: entra dado, sai dado. Sem HTTP, sem banco.
+// É a camada mais fácil de testar e a primeira a olhar quando uma nota vem errada.
 export interface Ranking {
   items: ScoredCard[]
   hiddenSpendOnlyCount: number

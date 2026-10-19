@@ -8,7 +8,8 @@ export interface RankingInput {
   sorting: Sorting
 }
 
-export class RankingService {
+// UseCase do ranking: busca todos os cartões e pede ao domain para pontuar, filtrar e ordenar.
+export class RankingUseCase {
   private readonly repository: CardsRepository
 
   constructor(repository: CardsRepository) {
