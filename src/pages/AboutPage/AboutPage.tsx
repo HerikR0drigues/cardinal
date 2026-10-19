@@ -2,8 +2,8 @@ import { Link } from 'react-router'
 import DetailTile from '@/components/DetailTile'
 import Header from '@/components/Header'
 import PageSection from '@/components/PageSection'
-import { cards } from '@/data/cards'
 import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+import { INVESTMENT_ROUTE_CARDS, SPEND_ONLY_CARDS, TOTAL_CARDS } from '@/lib/cardStats'
 import styles from './AboutPage.module.sass'
 
 export default function AboutPage() {
@@ -14,9 +14,11 @@ export default function AboutPage() {
       <Header eyebrow="Sobre" title="Um comparador feito para ser entendido" />
       <div className={styles.content}>
         <p className={styles.lede}>
-          O Cardinal compara {cards.length} cartões de crédito premium pelo que importa na hora de
+          O Cardinal compara {TOTAL_CARDS} cartões de crédito premium pelo que importa na hora de
           escolher: quanto zera de anuidade com o seu dinheiro, o retorno, as salas VIP e o
-          câmbio. Cada número vem com a fonte e com um selo de confiança.
+          câmbio. Por padrão o ranking mostra os {INVESTMENT_ROUTE_CARDS} que têm rota de isenção
+          por investimento. Os outros {SPEND_ONLY_CARDS} só zeram por gasto na fatura e aparecem
+          ao ligar essa opção. Cada número vem com a fonte e com um selo de confiança.
         </p>
 
         <PageSection title="De onde vem">

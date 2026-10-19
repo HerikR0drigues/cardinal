@@ -1,8 +1,8 @@
 import { Link } from 'react-router'
 import Brand from '@/components/Brand'
-import { cards } from '@/data/cards'
 import { author } from '@/data/author'
 import { navigationLinks } from '@/data/navigation'
+import { INVESTMENT_ROUTE_CARDS, TOTAL_CARDS } from '@/lib/cardStats'
 import styles from './Footer.module.sass'
 
 export default function Footer() {
@@ -34,7 +34,9 @@ export default function Footer() {
           <div className={styles.column}>
             <h2 className={styles.heading}>Sobre os dados</h2>
             <ul className={styles.list}>
-              <li>{cards.length} cartões comparados</li>
+              <li>
+                {TOTAL_CARDS} cartões na base, {INVESTMENT_ROUTE_CARDS} com isenção por investimento
+              </li>
               <li>Fontes e selo de confiança em cada cartão</li>
               <li>Confirme sempre no app do emissor</li>
             </ul>
