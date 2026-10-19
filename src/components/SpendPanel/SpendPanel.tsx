@@ -1,7 +1,8 @@
-import { formatBrl } from '@/lib/format'
+import AmountInput from '@/components/AmountInput'
 import Panel from '@/components/Panel'
 import RangeSlider from '@/components/RangeSlider'
-import ValueDisplay from '@/components/ValueDisplay'
+
+const SPEND_INPUT_MAX = 1_000_000
 
 interface SpendPanelProps {
   monthlySpend: number
@@ -17,12 +18,17 @@ export default function SpendPanel({
       title="Seu gasto mensal no cartão"
       hint="Entra só no retorno e nas salas VIP. A anuidade segue só pelo valor investido."
     >
-      <ValueDisplay value={formatBrl(monthlySpend)} />
+      <AmountInput
+        label="Gasto mensal no cartão, em reais"
+        value={monthlySpend}
+        max={SPEND_INPUT_MAX}
+        onChange={onMonthlySpendChange}
+      />
       <RangeSlider
         label="Gasto mensal no cartão"
         value={monthlySpend}
         min={0}
-        max={10000}
+        max={100000}
         step={500}
         onChange={onMonthlySpendChange}
       />

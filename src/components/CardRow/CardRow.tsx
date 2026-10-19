@@ -35,9 +35,15 @@ export default function CardRow({ card, scenario, position }: Readonly<CardRowPr
 
   return (
     <article className={styles.row}>
-      <div className={styles.preview} role="presentation" onClick={() => setIsOpen(true)}>
+      <button
+        type="button"
+        className={styles.preview}
+        tabIndex={-1}
+        aria-label={`Ampliar ${card.name}`}
+        onClick={() => setIsOpen(true)}
+      >
         <CreditCard card={card} />
-      </div>
+      </button>
       <div className={styles.info}>
         <div className={styles.top}>
           <span className={`${styles.position} num`} aria-label={`Posição ${position}`}>

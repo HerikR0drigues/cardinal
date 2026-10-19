@@ -26,6 +26,7 @@ const themeByIssuer: Record<string, CardTheme> = {
   Sicoob: { from: '#0a9a94', to: '#02302f', ink: LIGHT_INK },
   Banrisul: { from: '#1a64b8', to: '#00204a', ink: LIGHT_INK },
   BRB: { from: '#2250c8', to: '#08184f', ink: LIGHT_INK },
+  Banestes: { from: '#1f8fd6', to: '#06304f', ink: LIGHT_INK },
   Nubank: { from: '#9a2ee6', to: '#3d0a78', ink: LIGHT_INK },
   'C6 Bank': { from: '#4a4a4a', to: '#0d0d0d', ink: LIGHT_INK },
   Inter: { from: '#ff8a1f', to: '#c43c00', ink: LIGHT_INK },

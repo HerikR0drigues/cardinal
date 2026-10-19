@@ -1,10 +1,12 @@
 import { investmentPresets } from '@/data/constants'
-import { formatBrl, formatCompactBrl } from '@/lib/format'
+import { formatCompactBrl } from '@/lib/format'
+import AmountInput from '@/components/AmountInput'
 import Panel from '@/components/Panel'
 import Pill from '@/components/Pill'
 import PillRow from '@/components/PillRow'
 import RangeSlider from '@/components/RangeSlider'
-import ValueDisplay from '@/components/ValueDisplay'
+
+const INVESTMENT_INPUT_MAX = 100_000_000
 
 interface InvestmentPanelProps {
   investment: number
@@ -17,12 +19,17 @@ export default function InvestmentPanel({
 }: Readonly<InvestmentPanelProps>) {
   return (
     <Panel title="Quanto você tem investido" hint="No banco ou corretora do cartão">
-      <ValueDisplay value={formatBrl(investment)} />
+      <AmountInput
+        label="Valor investido, em reais"
+        value={investment}
+        max={INVESTMENT_INPUT_MAX}
+        onChange={onInvestmentChange}
+      />
       <RangeSlider
         label="Valor investido"
         value={investment}
         min={0}
-        max={300000}
+        max={5000000}
         step={5000}
         onChange={onInvestmentChange}
       />

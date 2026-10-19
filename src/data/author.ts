@@ -51,9 +51,10 @@ export const author = {
   experience: [
     {
       title: 'Frontend Developer',
-      subtitle: 'Florianópolis, SC',
-      period: 'dez 2024 – atual',
+      subtitle: 'Software para o mercado financeiro · Florianópolis, SC',
+      period: 'nov 2024 – atual',
       highlights: [
+        'Manutenção e novas funcionalidades de um software voltado ao mercado financeiro, usado por gestores, consultores e assessores de investimento.',
         'Mantenho e evoluo diversos módulos do software, com gerenciamento de estado em Vuex e testes automatizados com Jest.',
         'Crio componentes reutilizáveis e responsivos, integro APIs REST (JSON) e atuo com backend, design e produto da definição à entrega.',
       ],

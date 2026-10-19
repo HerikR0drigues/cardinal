@@ -9,17 +9,17 @@ interface CreditCardProps {
 }
 
 export default function CreditCard({ card }: Readonly<CreditCardProps>) {
-  const { ref, onPointerMove, onPointerLeave } = useTilt<HTMLDivElement>()
+  const { ref, onPointerMove, onPointerLeave } = useTilt<HTMLSpanElement>()
   const theme = getCardTheme(card)
 
   return (
-    <div
+    <span
       ref={ref}
       className={styles.stage}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
-      <div
+      <span
         className={styles.card}
         style={
           {
@@ -35,7 +35,7 @@ export default function CreditCard({ card }: Readonly<CreditCardProps>) {
         <span className={styles.network}>{card.network}</span>
         <span className={styles.sheen} />
         <span className={styles.glare} />
-      </div>
-    </div>
+      </span>
+    </span>
   )
 }

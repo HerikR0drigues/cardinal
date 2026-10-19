@@ -8,16 +8,24 @@ interface ScoreBarProps {
 
 export default function ScoreBar({ contributions }: Readonly<ScoreBarProps>) {
   return (
-    <div className={styles.bar} role="img" aria-label="Composição da nota">
+    <div className={styles.bar}>
+      <span className="visually-hidden">
+        Composição da nota:{' '}
+        {criteria
+          .map((criterion) => `${criterion.label} ${contributions[criterion.key].toFixed(1)}`)
+          .join(', ')}
+        .
+      </span>
       {criteria.map((criterion) => (
         <span
           key={criterion.key}
+          aria-hidden="true"
           className={styles.segment}
           style={{ width: `${contributions[criterion.key]}%`, background: criterion.color }}
           title={`${criterion.label}: ${contributions[criterion.key].toFixed(1)}`}
         />
       ))}
-      <span className={styles.rest} />
+      <span className={styles.rest} aria-hidden="true" />
     </div>
   )
 }

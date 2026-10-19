@@ -19,3 +19,7 @@ export function formatPercent(value: number): string {
 export function formatOneDecimal(value: number): string {
   return value.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 })
 }
+
+export function formatNumber(value: number): string {
+  return value.toLocaleString('pt-BR', { maximumFractionDigits: 0 })
+}
