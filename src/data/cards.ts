@@ -2515,7 +2515,7 @@ export const cards: Card[] = [
     network: 'Visa Infinite',
     group: 'traditionalBank',
     annualFee: 1260,
-    feeRule: 'Anuidade de R$ 1.260 (12x de R$ 105) segundo cartoeseviagens (03/07/2026, editado 29/08/2026) e Passageiro de Primeira. Isenção ligada ao relacionamento Personnalité: o blog cita investimentos a partir de R$ 50 mil ou gasto mensal a partir de R$ 10 mil e 50% de desconto com R$ 5 mil por mês (texto confuso); um documento Itaú sem data (não foi possível abrir) é citado com piso de R$ 3 milhões investidos. Fontes divergem; confirmar com o gerente.',
+    feeRule: 'Anuidade de R$ 1.260 (12x de R$ 105) segundo cartoeseviagens (03/07/2026, editado 29/08/2026) e Passageiro de Primeira. Isenção por gasto, segundo nota do Itaú ao Pontos pra Voar (nov/2023): fatura de pelo menos R$ 20 mil por mês zera a anuidade e R$ 10 mil dá 50% de desconto. Na mesma nota o banco cita isenção para quem mantém investimentos a partir de R$ 3 milhões, regra de 2023 que não foi reconfirmada. A isenção de R$ 50 mil investidos é do Personnalité Black e Infinite, não do LATAM Pass, e o Itaú esclareceu que este cartão não tem isenção pelo programa Minhas Vantagens. O PDF oficial de condições do Itaú não pôde ser aberto; confirmar com o gerente.',
     rewardsText: 'LATAM Pass: 2,5 pts/US$ no Brasil e 3,5 pts/US$ no exterior (3,7 e 5,25 para assinantes do Clube LATAM Pass). Validade de 36 meses segundo o blog.',
     rewardsRate: 1.1,
     loungeText: 'Salas LATAM ilimitadas ao voar pela LATAM (compartilhado com adicionais) e 2 acessos por ano na rede Visa Airport Companion/DragonPass.',
@@ -2532,6 +2532,7 @@ export const cards: Card[] = [
       'https://cartoeseviagens.com.br/itau-personnalite-latam-visa-infinite (acessado em 2026-10-19)',
       'https://cartoeseviagens.com.br/anuidade-cartoes-itau-2026 (publicado em 2026-06-18)',
       'https://www.itau.com.br/personnalite/cartoes/cartao-de-credito-latam-pass-visa-infinite (consultada via busca em 2026-10-19; leitura direta bloqueada)',
+      'https://pontospravoar.com/itau-esclarece-que-o-cartao-personnalite-latam-pass-visa-infinite-nao-possui-isencao-de-anuidade-pelo-programa-minhas-vantagens/ (publicado em 2023-11-09, acessado em 2026-10-19)',
     ],
   },
   {
