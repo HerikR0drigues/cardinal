@@ -50,7 +50,7 @@ Variáveis da API (todas opcionais, veja `apps/api/.env.example`): `PORT`, `DATA
 ```
 React (apps/web)                         Express (apps/api)
   Zustand: cenário e filtros  ──┐
-  TanStack Query: cache, erro,  ├─ POST /api/ranking ─▶ routes → controllers → services → repositories → SQLite
+  TanStack Query: cache, erro,  ├─ POST /api/ranking ─▶ routes → resources → usecases → repositories → SQLite
   carregamento e skeleton     ──┘                        └─ domain/: anuidade, nota, filtro e ordenação
                          ▲  validados com os mesmos schemas Zod (packages/shared)
 ```
@@ -59,6 +59,20 @@ React (apps/web)                         Express (apps/api)
 - **Estado do servidor** (TanStack Query): o ranking, o detalhe de cada cartão e as contagens. A tela mostra skeleton na primeira carga, mantém a lista anterior (esmaecida) enquanto atualiza, tenta de novo erros de rede e do servidor, não repete erro de cliente e pré-carrega o detalhe quando você passa o mouse no cartão.
 - **Contrato único**: `packages/shared` define os schemas Zod. A API valida a entrada com eles, o front valida a resposta, e os tipos TypeScript são inferidos dos mesmos schemas.
 - **Skeleton e tema**: as cores do skeleton são tokens da paleta (`--skeleton` e `--skeleton-shine`), definidos para o tema claro e o escuro, e a animação respeita `prefers-reduced-motion`.
+
+## Camadas da API
+
+Cada pedido atravessa as camadas nesta ordem, e cada uma tem uma só responsabilidade:
+
+| Camada | Pasta | Papel |
+|---|---|---|
+| Routes | `apps/api/src/routes` | liga URL + verbo a um método de resource |
+| Resource | `apps/api/src/resources` | camada HTTP: lê o pedido, valida com Zod, chama o usecase, responde JSON |
+| UseCase | `apps/api/src/usecases` | o que o sistema faz: orquestra repository e domain, decide erros (404) |
+| Domain | `apps/api/src/domain` | regras de negócio puras (nota, anuidade, filtro, ordenação) |
+| Repository | `apps/api/src/repositories` | acesso aos dados (interface + implementação SQLite) |
+
+`app.ts` monta tudo de baixo para cima (repository → usecase → resource), e é o único lugar que conhece as implementações concretas.
 
 ## API
 

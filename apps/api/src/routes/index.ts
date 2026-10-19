@@ -1,20 +1,24 @@
 import { Router } from 'express'
-import type { createCardsController } from '../controllers/cards.controller.ts'
-import { health, type createMetaController } from '../controllers/meta.controller.ts'
-import type { createRankingController } from '../controllers/ranking.controller.ts'
+import type { CardsResource } from '../resources/cards.resource.ts'
+import type { MetaResource } from '../resources/meta.resource.ts'
+import type { RankingResource } from '../resources/ranking.resource.ts'
 
-interface Controllers {
-  cards: ReturnType<typeof createCardsController>
-  ranking: ReturnType<typeof createRankingController>
-  meta: ReturnType<typeof createMetaController>
+interface Resources {
+  cards: CardsResource
+  ranking: RankingResource
+  meta: MetaResource
 }
 
-export function createApiRouter({ cards, ranking, meta }: Controllers): Router {
+// Routes = o mapa "URL + verbo → método do resource". Nenhuma lógica aqui.
+// As setas (request, response) => ... garantem que o método rode ligado ao seu resource.
+export function createApiRouter({ cards, ranking, meta }: Resources): Router {
   const router = Router()
-  router.get('/health', health)
-  router.get('/meta', meta.getMeta)
-  router.get('/cards/:id', cards.getById)
-  router.post('/cards/:id/score', cards.score)
-  router.post('/ranking', ranking.rank)
+
+  router.get('/health', (request, response) => meta.health(request, response))
+  router.get('/meta', (request, response) => meta.getMeta(request, response))
+  router.get('/cards/:id', (request, response) => cards.getById(request, response))
+  router.post('/cards/:id/score', (request, response) => cards.score(request, response))
+  router.post('/ranking', (request, response) => ranking.rank(request, response))
+
   return router
 }

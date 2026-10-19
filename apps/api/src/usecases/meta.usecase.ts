@@ -2,7 +2,8 @@ import type { Meta } from '@cardinal/shared'
 import { isSpendOnly } from '../domain/fee.ts'
 import type { CardsRepository } from '../repositories/cards.repository.ts'
 
-export class MetaService {
+// UseCase das contagens gerais: busca os cartões e conta quantos zeram a anuidade só por gasto.
+export class MetaUseCase {
   private readonly repository: CardsRepository
 
   constructor(repository: CardsRepository) {

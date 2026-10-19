@@ -4,16 +4,16 @@ import { rateLimit } from 'express-rate-limit'
 import helmet from 'helmet'
 import { pinoHttp } from 'pino-http'
 import type { Env } from './config/env.ts'
-import { createCardsController } from './controllers/cards.controller.ts'
-import { createMetaController } from './controllers/meta.controller.ts'
-import { createRankingController } from './controllers/ranking.controller.ts'
 import type { Logger } from './lib/logger.ts'
 import { createErrorHandler, notFoundHandler } from './middleware/error-handler.ts'
 import type { CardsRepository } from './repositories/cards.repository.ts'
+import { CardsResource } from './resources/cards.resource.ts'
+import { MetaResource } from './resources/meta.resource.ts'
+import { RankingResource } from './resources/ranking.resource.ts'
 import { createApiRouter } from './routes/index.ts'
-import { CardsService } from './services/cards.service.ts'
-import { MetaService } from './services/meta.service.ts'
-import { RankingService } from './services/ranking.service.ts'
+import { CardsUseCase } from './usecases/cards.usecase.ts'
+import { MetaUseCase } from './usecases/meta.usecase.ts'
+import { RankingUseCase } from './usecases/ranking.usecase.ts'
 
 export interface AppDependencies {
   cardsRepository: CardsRepository
@@ -43,9 +43,10 @@ export function createApp({ cardsRepository, logger, env }: AppDependencies) {
   app.use(
     '/api',
     createApiRouter({
-      cards: createCardsController(new CardsService(cardsRepository)),
-      ranking: createRankingController(new RankingService(cardsRepository)),
-      meta: createMetaController(new MetaService(cardsRepository)),
+      // Montagem de baixo para cima: repository → usecase → resource.
+      cards: new CardsResource(new CardsUseCase(cardsRepository)),
+      ranking: new RankingResource(new RankingUseCase(cardsRepository)),
+      meta: new MetaResource(new MetaUseCase(cardsRepository)),
     }),
   )
 
