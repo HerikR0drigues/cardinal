@@ -61,8 +61,8 @@ export default function HowItWorksPage() {
             </li>
             <li>
               <strong>Só por gasto.</strong> Sem rota por investimento, a isenção depende do que
-              você gasta na fatura. Esses cartões só aparecem com a opção de incluir isenção por
-              gasto.
+              você gasta na fatura. Esses cartões aparecem no ranking, e dá para ocultá-los
+              desligando a opção de incluir isenção por gasto.
             </li>
           </ol>
           <p>
