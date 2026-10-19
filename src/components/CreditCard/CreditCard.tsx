@@ -21,11 +21,16 @@ export default function CreditCard({ card }: Readonly<CreditCardProps>) {
     >
       <span
         className={styles.card}
+        data-finish={theme.finish}
+        data-pattern={theme.pattern}
+        data-chip={theme.chip}
         style={
           {
             '--card-from': theme.from,
             '--card-to': theme.to,
             '--card-ink': theme.ink,
+            '--card-accent': theme.accent,
+            '--card-base': theme.base,
           } as CSSProperties
         }
       >
