@@ -7,7 +7,7 @@ export const DEFAULT_FILTERS: Filters = {
   feeStatus: 'all',
   loungeOnly: false,
   searchText: '',
-  includeSpendOnly: false,
+  includeSpendOnly: true,
 }
 
 export function filterCards(cards: Card[], scenario: Scenario, filters: Filters): Card[] {

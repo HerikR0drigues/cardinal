@@ -18,7 +18,8 @@ export default function RangeSlider({
   step,
   onChange,
 }: Readonly<RangeSliderProps>) {
-  const fillPercent = max > min ? ((value - min) / (max - min)) * 100 : 0
+  const fillPercent =
+    max > min ? Math.min(Math.max(((value - min) / (max - min)) * 100, 0), 100) : 0
 
   return (
     <input

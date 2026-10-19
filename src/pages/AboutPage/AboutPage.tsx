@@ -16,9 +16,10 @@ export default function AboutPage() {
         <p className={styles.lede}>
           O Cardinal compara {TOTAL_CARDS} cartões de crédito premium pelo que importa na hora de
           escolher: quanto zera de anuidade com o seu dinheiro, o retorno, as salas VIP e o
-          câmbio. Por padrão o ranking mostra os {INVESTMENT_ROUTE_CARDS} que têm rota de isenção
-          por investimento. Os outros {SPEND_ONLY_CARDS} só zeram por gasto na fatura e aparecem
-          ao ligar essa opção. Cada número vem com a fonte e com um selo de confiança.
+          câmbio. Dos {TOTAL_CARDS}, {INVESTMENT_ROUTE_CARDS} têm rota de isenção por investimento
+          e os outros {SPEND_ONLY_CARDS} só zeram por gasto na fatura. O ranking mostra todos, e o
+          filtro “Incluir só isenção por gasto” liga e desliga esses últimos. Cada número vem com
+          a fonte e com um selo de confiança.
         </p>
 
         <PageSection title="De onde vem">

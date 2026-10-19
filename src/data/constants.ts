@@ -22,7 +22,7 @@ export const weightPresets: WeightPreset[] = [
   { name: 'Retorno', weights: { annualFee: 20, rewards: 55, loungeAccess: 15, exchangeRate: 10 } },
 ]
 
-export const investmentPresets: number[] = [20000, 50000, 60000, 100000, 250000]
+export const investmentPresets: number[] = [20000, 50000, 100000, 250000, 1000000]
 
 export const groupOptions: GroupOption[] = [
   { value: 'all', label: 'Todas' },

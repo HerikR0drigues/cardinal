@@ -72,7 +72,10 @@ export function summarizeRewards(
 export function summarizeLounge(card: Card): Fact {
   return {
     value: card.loungeSummary,
-    detail: joinOrUndefined(detectPrograms(card.loungeText, LOUNGE_PROGRAMS)),
+    detail:
+      card.loungeScore === null
+        ? undefined
+        : joinOrUndefined(detectPrograms(card.loungeText, LOUNGE_PROGRAMS)),
   }
 }
 
