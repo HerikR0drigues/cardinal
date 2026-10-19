@@ -1,0 +1,37 @@
+@use '../../styles/mixins'
+
+.page
+  @include mixins.container
+  display: grid
+  justify-items: start
+  gap: var(--space-3)
+  padding: var(--space-7) 0
+
+.title
+  font-family: var(--font-display)
+  font-size: clamp(1.5rem, 3vw, var(--text-2xl))
+  font-weight: 400
+
+.text
+  color: var(--text-muted)
+
+.actions
+  display: flex
+  align-items: center
+  gap: var(--space-4)
+  margin-top: var(--space-3)
+
+.action
+  padding: var(--space-2) var(--space-4)
+  border: 0
+  border-radius: var(--radius-pill)
+  background: var(--primary)
+  color: var(--on-primary)
+  font: inherit
+  font-size: var(--text-sm)
+  cursor: pointer
+
+.link
+  color: var(--text)
+  font-size: var(--text-sm)
+  text-underline-offset: 3px

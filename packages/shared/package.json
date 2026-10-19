@@ -1,0 +1,20 @@
+{
+  "name": "@cardinal/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Contratos compartilhados entre web e api: schemas Zod, tipos inferidos e constantes",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}

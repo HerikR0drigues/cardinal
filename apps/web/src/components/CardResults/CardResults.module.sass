@@ -1,0 +1,74 @@
+@use '../../styles/mixins'
+
+.main
+  @include mixins.container
+  display: grid
+  grid-template-columns: minmax(0, 1fr)
+  gap: var(--space-5)
+  padding-bottom: var(--space-6)
+
+.resultsBar
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: space-between
+  gap: var(--space-3) var(--space-4)
+
+.count
+  font-size: var(--text-sm)
+  color: var(--text-muted)
+
+.summary
+  display: grid
+  gap: 2px
+
+.hidden
+  color: var(--text-muted)
+  font-size: var(--text-xs)
+
+.show
+  padding: 0
+  border: 0
+  background: none
+  color: var(--text)
+  font: inherit
+  text-decoration: underline
+  text-underline-offset: 3px
+  cursor: pointer
+
+.results
+  transition: opacity var(--transition)
+
+  &[data-stale='true']
+    opacity: 0.55
+
+.activity
+  position: relative
+  height: 2px
+  margin-top: calc(var(--space-2) * -1)
+  overflow: hidden
+  border-radius: 999px
+  opacity: 0
+  transition: opacity var(--transition)
+
+  &[data-active='true']
+    opacity: 1
+
+  &::after
+    content: ''
+    position: absolute
+    inset: 0
+    width: 40%
+    background: var(--text-muted)
+    animation: slide 1s ease-in-out infinite
+
+@keyframes slide
+  from
+    transform: translateX(-100%)
+  to
+    transform: translateX(250%)
+
+@media (prefers-reduced-motion: reduce)
+  .activity::after
+    animation: none
+    width: 100%
