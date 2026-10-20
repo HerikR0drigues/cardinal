@@ -5,14 +5,14 @@ import RulesPanel from '@/components/RulesPanel'
 import SpendPanel from '@/components/SpendPanel'
 import WeightsPanel from '@/components/WeightsPanel'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { useScenario, useScenarioStore } from '@/store/scenarioStore'
+import { getUpdateScenario, useScenario, useScenarioStore } from '@/store/scenarioStore'
 import styles from './Sidebar.module.sass'
 
 const DESKTOP_QUERY = '(min-width: 64rem)'
 
 export default function Sidebar() {
   const scenario = useScenario()
-  const updateScenario = useScenarioStore((state) => state.updateScenario)
+  const updateScenario = useScenarioStore(getUpdateScenario)
   const isDesktop = useMediaQuery(DESKTOP_QUERY)
   const [isAdjustmentsOpen, setIsAdjustmentsOpen] = useState(false)
   const showControls = isDesktop || isAdjustmentsOpen

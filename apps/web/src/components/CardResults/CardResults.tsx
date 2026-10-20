@@ -6,14 +6,20 @@ import Skeleton from '@/components/Skeleton'
 import SortControl from '@/components/SortControl'
 import Toolbar from '@/components/Toolbar'
 import { useRankingRequest } from '@/hooks/useRankingRequest'
-import { useFiltersStore } from '@/store/filtersStore'
+import {
+  getFilters,
+  getSetFilters,
+  getSetSorting,
+  getSorting,
+  useFiltersStore,
+} from '@/store/filtersStore'
 import styles from './CardResults.module.sass'
 
 export default function CardResults() {
-  const filters = useFiltersStore((state) => state.filters)
-  const sorting = useFiltersStore((state) => state.sorting)
-  const setFilters = useFiltersStore((state) => state.setFilters)
-  const setSorting = useFiltersStore((state) => state.setSorting)
+  const filters = useFiltersStore(getFilters)
+  const sorting = useFiltersStore(getSorting)
+  const setFilters = useFiltersStore(getSetFilters)
+  const setSorting = useFiltersStore(getSetSorting)
 
   const { data, isPending, isError, error, refetch, isFetching, isPlaceholderData } =
     useRankingQuery(useRankingRequest())

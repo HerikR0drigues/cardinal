@@ -10,10 +10,20 @@ interface FiltersStore {
   resetFilters: () => void
 }
 
-export const useFiltersStore = create<FiltersStore>()((set) => ({
+const initialState = {
   filters: DEFAULT_FILTERS,
   sorting: DEFAULT_SORTING,
+}
+
+export const useFiltersStore = create<FiltersStore>()((set) => ({
+  ...initialState,
+
   setFilters: (changes) => set((state) => ({ filters: { ...state.filters, ...changes } })),
   setSorting: (sorting) => set({ sorting }),
-  resetFilters: () => set({ filters: DEFAULT_FILTERS, sorting: DEFAULT_SORTING }),
+  resetFilters: () => set(initialState),
 }))
+
+export const getFilters = (state: FiltersStore) => state.filters
+export const getSorting = (state: FiltersStore) => state.sorting
+export const getSetFilters = (state: FiltersStore) => state.setFilters
+export const getSetSorting = (state: FiltersStore) => state.setSorting

@@ -29,6 +29,7 @@ export const useScenarioStore = create<ScenarioStore>()(
       weights: weightPresets[0].weights,
       hasSalaryPortability: true,
       ignoreEntryRequirement: true,
+
       updateScenario: (changes) => set(changes),
     }),
     {
@@ -56,3 +57,5 @@ export function useScenario(): Scenario {
     ),
   )
 }
+
+export const getUpdateScenario = (state: ScenarioStore) => state.updateScenario
